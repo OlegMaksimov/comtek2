@@ -1,8 +1,6 @@
 package ru.maksimov.controller;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import ru.maksimov.model.Vaccine;
 import ru.maksimov.repository.VaccineRepository;
 
@@ -18,8 +16,16 @@ public class ApiController {
         this.vaccineRepository = vaccineRepository;
     }
 
-    @GetMapping("/visits")
+    @GetMapping("/vaccine")
     public Iterable<Vaccine> getVisits(){
         return vaccineRepository.findAll();
     }
+
+//    @PostMapping("/vaccine")
+//    public Vaccine createVaccine(@RequestBody Vaccine vaccine ){
+//        // TODO: 10.11.2017 замутить фабрику
+//        System.out.println(vaccine.toString());
+//        vaccineRepository.save(vaccine);
+//        return vaccine;
+//    }
 }
