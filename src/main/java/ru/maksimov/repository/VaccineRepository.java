@@ -6,5 +6,5 @@ import ru.maksimov.model.Vaccine;
 /**
  * Created by iMac on 09.11.2017.
  */
-public interface Vaccinerepository extends CrudRepository<Vaccine,Integer>{
+public interface VaccineRepository extends CrudRepository<Vaccine,Integer>{
 }
