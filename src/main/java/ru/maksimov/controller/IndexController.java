@@ -11,6 +11,7 @@ import ru.maksimov.repository.VaccineRepository;
 import javax.validation.Valid;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -33,6 +34,8 @@ public class IndexController {
 //        ---------------------------------------
         Vaccine vaccine = new Vaccine(1,"123",1,new Date());
         vaccineRepository.save(vaccine);
+         vaccine = new Vaccine(2,"222",2,new Date());
+        vaccineRepository.save(vaccine);
 
         return new ModelAndView("index", model);
     }
@@ -46,5 +49,13 @@ public class IndexController {
         vaccineRepository.save(vaccine);
 
         return "redirect:/api/vaccine";
+    }
+
+    @GetMapping("/admin")
+    public ModelAndView admin(){
+        Iterable<Vaccine> vaccines = vaccineRepository.findAll();
+        Map<String,Iterable<Vaccine>> map = new HashMap<>();
+        map.put("Vaccines",vaccines);
+        return new ModelAndView("admin",map);
     }
 }

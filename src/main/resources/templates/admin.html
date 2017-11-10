@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container-fluid">
+<div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="#">Учет прививок</a>
+</div>
+<div class="navbar-collapse collapse">
+    <ul class="nav navbar-nav navbar-right">
+        <li><a href="#">Dashboard</a></li>
+        <li><a href="#">Пациенты</a></li>
+        <li><a href="#">Препораты</a></li>
+        <li><a href="#">Help</a></li>
+    </ul>
+</div>
+</div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+            <h1 class="page-header">Dashboard</h1>
+            <h2 class="sub-header">Регистрация прививок</h2>
+
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>drag</th>
+                        <th>compliance</th>
+                        <th>date</th>
+                    </tr>л
+                    </thead>
+                    <tbody>
+                    {{#Vaccines }}
+                    <tr>
+                        <td>{{ id }}</td>
+                        <td>{{ drag }}</td>
+                        <td>{{ compliance }}</td>
+                        <td>{{ date }}</td>
+                    </tr>
+                    {{/Vaccines}}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+</body>
+</html>

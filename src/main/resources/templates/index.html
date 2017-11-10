@@ -7,16 +7,7 @@
 <body>
 <h1>Welcome to Spring, {{ name }}</h1>
 
-<div class="container">
-    <form method="post" id="formx" class="form-signin" role="form" action="#" th:action="@{/}" th:object="${vaccine}">
-        <input type="text" class="form-control" name="drag" th:field="*{drag}" placeholder="Препарат" required>
-        <input type="text" class="form-control" name="compliance" th:field="*{compliance}" placeholder="Согласие" required>
-        <input type="text" class="form-control" name="date" th:field="*{date}" placeholder="дата" required>
 
-        <button class=" btn btn-lg bg-primary btn-block" type="submit"> Отправить</button>
-    </form>
-
-</div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/RestApi.js"></script>
